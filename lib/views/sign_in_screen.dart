@@ -1,16 +1,108 @@
+import 'package:app_user/classes/colors_provider.dart';
+import 'package:app_user/widgets/signs_buttons.dart';
+import 'package:app_user/widgets/signs_text_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
+import '../routes/routes_manager.dart' as route;
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
   @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-            "SignIn Screen"
+    return Scaffold(
+      backgroundColor: Colors.grey.shade300,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(height: 100,),
+              const Center(
+                  child: Icon(
+                    Symbols.lock,
+                    size: 150,
+                    color: ColorsProvider.primaryColor1,
+                  ),
+              ),
+              const SizedBox(height: 40,),
+              const Text("Welcome Back, You've been missed",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: ColorsProvider.primaryColor3
+                ),
+              ),
+              const SizedBox(height: 50,),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 25,
+                  vertical: 10
+                ),
+                child: SignsTextFields(
+                    controller: emailController,
+                    hint: "Enter your Email",
+                    obscureText: false,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 25,
+                  vertical: 10
+                ),
+                child: SignsTextFields(
+                  controller: passwordController,
+                  hint: "Enter your Password",
+                  obscureText: false,
+                ),
+              ),
+              const SizedBox(height: 50,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: SignsButtons(
+                    onTap: (){
+                      Navigator.pushNamed(context, route.homeScreen);
+                    },
+                    signText: "SignIn Now",
+                ),
+              ),
+              const SizedBox(height: 50,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("Don't have an account?",
+                    style: TextStyle(
+                      color: ColorsProvider.primaryColor3,
+                      fontSize: 20,
+                    ),
+                  ),
+                  const SizedBox(width: 10,),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, route.signUpScreen);
+                    },
+                      child: const Text(
+                          "Sign Up",
+                        style: TextStyle(
+                          color: ColorsProvider.primaryColor1,
+                          fontSize: 20,
+                        ),
+                      ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
-      ),
+      )
     );
   }
 }

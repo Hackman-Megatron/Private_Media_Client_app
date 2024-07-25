@@ -1,16 +1,122 @@
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 
-class SignUpScreen extends StatelessWidget {
+import '../routes/routes_manager.dart' as route;
+import '../classes/colors_provider.dart';
+import '../widgets/signs_buttons.dart';
+import '../widgets/signs_text_fields.dart';
+
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
 
   @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmController = TextEditingController();
+
+
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-            "SignUp Screen"
-        ),
-      ),
+    return Scaffold(
+        backgroundColor: Colors.grey.shade300,
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(height: 100,),
+                const Center(
+                  child: Icon(
+                    Symbols.passkey,
+                    size: 150,
+                    color: ColorsProvider.primaryColor1,
+                  ),
+                ),
+                const SizedBox(height: 40,),
+                const Text("Welcome Back, You've been missed",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: ColorsProvider.primaryColor3
+                  ),
+                ),
+                const SizedBox(height: 50,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 25,
+                      vertical: 10
+                  ),
+                  child: SignsTextFields(
+                    controller: emailController,
+                    hint: "Enter your Email",
+                    obscureText: false,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 25,
+                      vertical: 10
+                  ),
+                  child: SignsTextFields(
+                    controller: passwordController,
+                    hint: "Enter your Password",
+                    obscureText: false,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 25,
+                      vertical: 10
+                  ),
+                  child: SignsTextFields(
+                    controller: confirmController,
+                    hint: "Confirm Password",
+                    obscureText: false,
+                  ),
+                ),
+                const SizedBox(height: 50,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: SignsButtons(
+                    onTap: (){
+                      Navigator.pushNamed(context, route.signInScreen);
+                    },
+                    signText: "SignUp Now",
+                  ),
+                ),
+                const SizedBox(height: 50,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Already have an account?",
+                      style: TextStyle(
+                        color: ColorsProvider.primaryColor3,
+                        fontSize: 20,
+                      ),
+                    ),
+                    const SizedBox(width: 10,),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.pushNamed(context, route.signInScreen);
+                      },
+                      child: const Text(
+                        "Sign In",
+                        style: TextStyle(
+                          color: ColorsProvider.primaryColor1,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        )
     );
   }
 }
