@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
         const Duration(
             seconds: 10
         ), (){
-      Navigator.pushNamed(context, route.signInScreen);
+      Navigator.pushNamed(context, route.startScreen);
     }
     );
   }
@@ -53,10 +53,8 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             Spacer(),
-            SpinKitWaveSpinner(
-              color: Colors.white,
-              trackColor: ColorsProvider.primaryColor3,
-              waveColor: ColorsProvider.primaryColor3,
+            SpinKitThreeInOut(
+              color: ColorsProvider.primaryColor2,
               size: 75,
             ),
             Spacer(),

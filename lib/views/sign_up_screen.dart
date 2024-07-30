@@ -23,25 +23,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey.shade300,
+        backgroundColor: Colors.grey.shade100,
         body: SingleChildScrollView(
           child: SafeArea(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 100,),
+                const SizedBox(height: 50,),
                 const Center(
                   child: Icon(
                     Symbols.passkey,
                     size: 150,
-                    color: ColorsProvider.primaryColor1,
+                    color: ColorsProvider.primaryColor3,
                   ),
                 ),
                 const SizedBox(height: 40,),
-                const Text("Welcome Back, You've been missed",
+                const Text("Let's first register you Here",
                   style: TextStyle(
                       fontSize: 20,
-                      color: ColorsProvider.primaryColor3
+                      color: ColorsProvider.secondaryColor1
                   ),
                 ),
                 const SizedBox(height: 50,),
@@ -85,7 +85,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onTap: (){
                       Navigator.pushNamed(context, route.signInScreen);
                     },
-                    signText: "SignUp Now",
+                    signText: "Sign Up",
                   ),
                 ),
                 const SizedBox(height: 50,),
@@ -94,7 +94,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   children: [
                     const Text("Already have an account?",
                       style: TextStyle(
-                        color: ColorsProvider.primaryColor3,
+                        color: ColorsProvider.secondaryColor1,
                         fontSize: 20,
                       ),
                     ),
@@ -108,6 +108,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         style: TextStyle(
                           color: ColorsProvider.primaryColor1,
                           fontSize: 20,
+                          fontWeight: FontWeight.bold
                         ),
                       ),
                     ),

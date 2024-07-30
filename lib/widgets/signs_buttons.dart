@@ -1,5 +1,5 @@
-import 'package:app_user/classes/colors_provider.dart';
 import 'package:flutter/cupertino.dart';
+import '../classes/colors_provider.dart';
 
 class SignsButtons extends StatelessWidget {
   final Function() onTap;
@@ -14,14 +14,17 @@ class SignsButtons extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        color: ColorsProvider.primaryColor3,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: ColorsProvider.secondaryColor1,
+        ),
         height: 75,
         child: Center(
           child: Text(signText,
             style: const TextStyle(
-              fontSize: 15,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: ColorsProvider.whiteColor,
+              color: ColorsProvider.primaryColor1,
             ),
           ),
         ),

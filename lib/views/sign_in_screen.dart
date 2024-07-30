@@ -2,7 +2,6 @@ import 'package:app_user/classes/colors_provider.dart';
 import 'package:app_user/widgets/signs_buttons.dart';
 import 'package:app_user/widgets/signs_text_fields.dart';
 import 'package:flutter/material.dart';
-import 'package:material_symbols_icons/material_symbols_icons.dart';
 import '../routes/routes_manager.dart' as route;
 
 class SignInScreen extends StatefulWidget {
@@ -20,7 +19,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade300,
+      backgroundColor: Colors.grey.shade100,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -29,16 +28,16 @@ class _SignInScreenState extends State<SignInScreen> {
               const SizedBox(height: 100,),
               const Center(
                   child: Icon(
-                    Symbols.lock,
+                    Icons.lock,
                     size: 150,
-                    color: ColorsProvider.primaryColor1,
+                    color: ColorsProvider.primaryColor3,
                   ),
               ),
               const SizedBox(height: 40,),
               const Text("Welcome Back, You've been missed",
                 style: TextStyle(
                   fontSize: 20,
-                  color: ColorsProvider.primaryColor3
+                  color: ColorsProvider.secondaryColor1
                 ),
               ),
               const SizedBox(height: 50,),
@@ -71,7 +70,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     onTap: (){
                       Navigator.pushNamed(context, route.homeScreen);
                     },
-                    signText: "SignIn Now",
+                    signText: "Sign In Now",
                 ),
               ),
               const SizedBox(height: 50,),
@@ -80,7 +79,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 children: [
                   const Text("Don't have an account?",
                     style: TextStyle(
-                      color: ColorsProvider.primaryColor3,
+                      color: ColorsProvider.secondaryColor1,
                       fontSize: 20,
                     ),
                   ),
@@ -92,8 +91,9 @@ class _SignInScreenState extends State<SignInScreen> {
                       child: const Text(
                           "Sign Up",
                         style: TextStyle(
-                          color: ColorsProvider.primaryColor1,
+                          color: ColorsProvider.primaryColor3,
                           fontSize: 20,
+                          fontWeight: FontWeight.bold
                         ),
                       ),
                   ),
