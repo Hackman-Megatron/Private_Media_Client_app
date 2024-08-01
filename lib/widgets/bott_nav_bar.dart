@@ -1,6 +1,5 @@
 import 'package:app_user/classes/colors_provider.dart';
 import 'package:app_user/widgets/chats_tab_bar.dart';
-import 'package:flutter/rendering.dart';
 
 import '../views/Settings_screen.dart';
 import '../views/home_screen.dart';
@@ -66,7 +65,6 @@ class _BottNavBarState extends State<BottNavBar> {
                   currentIndex = index;
                 });
               },
-              iconSize: 40,
               type: BottomNavigationBarType.fixed,
               selectedItemColor: ColorsProvider.primaryColor3,
               showSelectedLabels: false,
@@ -81,7 +79,6 @@ class _BottNavBarState extends State<BottNavBar> {
                   icon: Icon(Icons.messenger), label: "chats",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.add_circle_rounded), label: "Publish",
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.notifications), label: "Notifications",

@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
         const Duration(
             seconds: 10
         ), (){
-      Navigator.pushNamed(context, route.startScreen);
+          Navigator.pushNamed(context, route.startScreen);
     }
     );
   }
@@ -36,36 +36,33 @@ class _SplashScreenState extends State<SplashScreen> {
               end: Alignment.topRight,
             )
         ),
-        child: const Column(
+        child: Column(
           children: [
             Spacer(),
             SizedBox(
-              height: 250,
-              width: 350,
+              height: 600,
+              width: 450,
               child: Center(
-                  child: Text("Logo Application",
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: ColorsProvider.whiteColor,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
+                  child: Image.asset("assets/enterprises/three.png",
+                    height: 450,
+                    fit: BoxFit.cover,
+                  ),
               ),
             ),
-            Spacer(),
-            SpinKitThreeInOut(
+            const Spacer(),
+            const SpinKitThreeInOut(
               color: ColorsProvider.primaryColor2,
               size: 75,
             ),
-            Spacer(),
-            Text("Logos Enterprise",
+            const Spacer(),
+            const Text("Logos Enterprise",
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),
