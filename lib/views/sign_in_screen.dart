@@ -68,7 +68,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: SignsButtons(
                     onTap: (){
-                      Navigator.pushNamed(context, route.homeScreen);
+                      Navigator.pushNamed(context, route.bottomNavBar);
                     },
                     signText: "Sign In Now",
                 ),

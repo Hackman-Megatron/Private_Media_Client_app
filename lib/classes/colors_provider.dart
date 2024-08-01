@@ -7,7 +7,7 @@ class ColorsProvider{
   static const primaryColor3 =Color.fromRGBO(135,62,35,1.000);
 
   static const secondaryColor1 = Color.fromRGBO(30,30,32,1.000);
-  static const secondaryColor2=Color(0xFF9dceff);
+  static Color secondaryColor2=Colors.grey.shade300;
 
   static const whiteColor =Color(0xFFFFFFFF);
   static const black =Color(0xFF1d1617);
