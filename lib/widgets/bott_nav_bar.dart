@@ -79,6 +79,7 @@ class _BottNavBarState extends State<BottNavBar> {
                   icon: Icon(Icons.messenger), label: "chats",
                 ),
                 BottomNavigationBarItem(
+                    icon: Icon(Icons.work), label: "Projects"
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.notifications), label: "Notifications",
