@@ -68,6 +68,7 @@ class _BottNavBarState extends State<BottNavBar> {
               type: BottomNavigationBarType.fixed,
               selectedItemColor: ColorsProvider.primaryColor3,
               showSelectedLabels: false,
+              iconSize: 45,
               showUnselectedLabels: false,
               unselectedItemColor: ColorsProvider.primaryColor1,
               currentIndex: currentIndex,

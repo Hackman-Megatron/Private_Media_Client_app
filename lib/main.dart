@@ -1,8 +1,15 @@
+import '../themes/themes_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:app_user/routes/routes_manager.dart' as route;
+import '../routes/routes_manager.dart' as route;
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context)=>ThemesManager(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,10 +18,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: route.controller,
+      theme: Provider.of<ThemesManager>(context).themeData,
       initialRoute: route.splashScreen,
     );
   }

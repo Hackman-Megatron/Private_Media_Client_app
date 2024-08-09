@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-
 import '../widgets/signs_buttons.dart';
 import '../routes/routes_manager.dart' as route;
 
@@ -11,7 +9,7 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: SingleChildScrollView(
         child: SafeArea(
             child: Column(
